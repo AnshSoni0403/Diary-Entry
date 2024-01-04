@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Diary</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .page-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .page {
+            width: 100%;
+            height: auto;
+        }
+
+        main {
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            max-width: 1500px;
+            padding: 20px;
+            /* background-color: rgba(255, 255, 255, 0);  
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px; */
+            text-align: center;
+            box-sizing: border-box; /* Include padding in height calculation */
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .date {
+            font-size: 0.8em;
+            color: #7f8c8d;
+        }
+
+        textarea {
+            width: 300%;
+            height: 800px;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Styling for the Save Entry button */
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* button */
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <img src="C:\Data\workspace\HTML\Dairy Entry\Images\page.jpg" class="page">
+        <main>
+            <textarea id="diaryEntry" placeholder="Write your diary entry here..."></textarea>
+            
+            
+
+            <button onclick="saveEntry()">Save Entry</button>
+            <p class="date" id="currentDateTime"></p>
+        </main>
+    </div>
+
+    <script>
+        function saveEntry() {
+            // Get the user's input from the textarea
+            var diaryEntryText = document.getElementById("diaryEntry").value;
+
+            // Get the current date and time
+            var currentDate = new Date();
+            var currentDateTimeString = currentDate.toLocaleString();
+
+            // Display the current date and time
+            document.getElementById("currentDateTime").textContent = "Entry saved on " + currentDateTimeString;
+
+            // You can perform any additional actions with the entered data here if needed
+
+            // Optional: Clear the textarea after saving
+            document.getElementById("diaryEntry").value = "";
+        }
+    </script>
+
+</body>
+</html>
